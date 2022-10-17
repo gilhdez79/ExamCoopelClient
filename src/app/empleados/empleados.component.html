@@ -1,0 +1,62 @@
+<div class="container ">
+  <div class="row mt-5">
+
+
+          <div class="w-100 ml-3 m-3"> <button type="submit" class="btn btn-primary card-link">Nuevo</button></div>
+
+    <div class="col-6">
+
+      <div class="card mb-3">
+        <h3 class="card-header">
+          <legend>Registro Empleados</legend>
+        </h3>
+        <div class="card-body">
+          <form (submit)="guardar()" [formGroup]="empleadofrm">
+            <fieldset>
+              <div class="form-group">
+                <label for="numEmpleado" class="form-label mt-4">Numero Empleado</label>
+                <input type="email" class="form-control" id="numEmpleado" formControlName="numeroEmpleado" aria-describedby="emailHelp"
+                  placeholder="Numero de Empleado" required="">
+                <small id="emailHelp" class="form-text text-muted">Ejemplo 000006</small>
+              </div>
+              <div class="form-group">
+                <label for="nombre" class="form-label mt-4">Nombre</label>
+                <input type="text" class="form-control" id="nombre" formControlName="nombre" required="">
+              </div>
+              <fieldset class="form-group">
+                <legend class="mt-4">Rol </legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="frmRol" id="rolChofer" value="1" formControlName="frmRol"
+                    checked="">
+                  <label class="form-check-label" for="rolChofer">
+                    Chofer
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="frmRol" id="rolCargador" value="2" formControlName="frmRol">
+                  <label class="form-check-label" for="rolCargador">
+                    Cargador
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <input class="form-check-input" type="radio" name="frmRol" id="rolAuxiliar" value="3" formControlName="frmRol">
+                  <label class="form-check-label" for="rolAuxiliar">
+                    Auxiliar
+                  </label>
+                </div>
+              </fieldset>
+
+            </fieldset>
+            <div class="card-footer text-muted text-right">
+              <button type="submit" [disabled]="!empleadofrm.valid"  class="btn btn-primary card-link">Guardar</button>
+              <button type="reset" class="btn btn-primary card-link">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
