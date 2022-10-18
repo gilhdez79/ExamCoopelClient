@@ -38,11 +38,14 @@ export class EmpleadosComponent implements OnInit {
     console.log(this.empleadofrm);
     console.log('Saved: ', JSON.stringify(this.empleadofrm.value));
 
-    this.dataService.postEmpleadoForm(this.empleadoItem).subscribe(
-      result => console.log('success', result),
-      error=> console.log('error: ', error)
+    if (this.empleadofrm.valid) {
+      this.dataService.postEmpleadoForm(this.empleadoItem).subscribe(
+        result => console.log('success', result),
+        error=> console.log('error: ', error)
 
-    )
+      )
+    }
+
 
   }
 
