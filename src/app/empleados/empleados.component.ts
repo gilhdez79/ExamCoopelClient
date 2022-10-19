@@ -38,6 +38,11 @@ export class EmpleadosComponent implements OnInit {
     console.log(this.empleadofrm);
     console.log('Saved: ', JSON.stringify(this.empleadofrm.value));
 
+    this.empleadoItem.id = this.empleadofrm.get('id').value;
+    this.empleadoItem.Nombre = this.empleadofrm.get('nombre').value;
+    this.empleadoItem.NumeroEmpleado = this.empleadofrm.get('numeroEmpleado').value;
+    this.empleadoItem.IdRol = this.empleadofrm.get('idRol').value;
+
     if (this.empleadofrm.valid) {
       this.dataService.postEmpleadoForm(this.empleadoItem).subscribe(
         result => console.log('success', result),
