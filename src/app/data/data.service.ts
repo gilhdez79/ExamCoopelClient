@@ -20,17 +20,16 @@ export class DataService {
   postEmpleadoForm(empleado: Empleados ): Observable<any>{
     const httpOptions : any    = {
       headers: new HttpHeaders({
-        //'Content-Type':  'application/json',
+        'Content-Type':  'application/json',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'GET',
         'Access-Control-Allow-Origin': '*'
       })
     };
 
-    let json= JSON.stringify(Empleados);
+    let json= JSON.stringify(empleado);
   // Crear variable params con el usuario en json
-    let params = 'json='+json;
-
+    let params =  json;
     return this.http.post(apiSettings.URLAPI + apiSettings.CTRLEMPLEADO, params, httpOptions);
   }
 
