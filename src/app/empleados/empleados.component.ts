@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from '../data/data.service';
-
+import { Observable } from 'rxjs';
 import { Empleados } from '../models/IEmpleados';
 
 @Component({
@@ -54,8 +54,12 @@ export class EmpleadosComponent implements OnInit {
 
   getListaEmpleados(){
     this.dataService.GetListEmpleados().subscribe(
-      result => console.log('success', result["objReturn"]),
-      error=> console.log('error: ', error)
+      // result => console.log('success', result["objReturn"]),
+      // error=> console.log('error: ', error)
+      {
+        next: data => console.log(data),
+        error: err=> console.log(err)
+      }
     )
 
   }

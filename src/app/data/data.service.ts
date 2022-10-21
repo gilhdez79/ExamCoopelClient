@@ -5,6 +5,7 @@ import { Empleados,IEmpleado } from '../models/IEmpleados';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { apiSettings } from '../core/ApiSettings';
 import { EMPTY_OBSERVER } from 'rxjs/internal/Subscriber';
+import { IResponse, Response, ObjReturn } from '../models/IResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,8 @@ export class DataService {
   return this.http.get(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}${"/obtenerEmpleado"}${id}`,  httpOptions);
   }
 
-  GetListEmpleados(): Observable<any>{
-  return this.http.get(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`);
+  GetListEmpleados(): Observable<ObjReturn>{
+  return this.http.get<IResponse>(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`)
+  .pipe(map ((resp: IResponse) => resp.objReturn));
   }
 }
