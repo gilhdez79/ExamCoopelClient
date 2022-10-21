@@ -50,8 +50,16 @@ export class EmpleadosComponent implements OnInit {
 
       )
     }
+  }
 
+  getListaEmpleados(){
+    this.dataService.GetListEmpleados().subscribe(
+      result => console.log('success', result["objReturn"]),
+      error=> console.log('error: ', error)
+    )
 
   }
+
+
 
 }

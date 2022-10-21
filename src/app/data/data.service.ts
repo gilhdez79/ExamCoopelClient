@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Empleados } from '../models/IEmpleados';
+import { of, Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { Empleados,IEmpleado } from '../models/IEmpleados';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { apiSettings } from '../core/ApiSettings';
+import { EMPTY_OBSERVER } from 'rxjs/internal/Subscriber';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +12,7 @@ import { apiSettings } from '../core/ApiSettings';
 export class DataService {
 
   urlAPI:string = 'https://localhost:44300/';
-
-
-
   constructor(  private http:HttpClient) {
-
   }
 
   postEmpleadoForm(empleado: Empleados ): Observable<any>{
@@ -43,5 +41,9 @@ export class DataService {
       })
     };
   return this.http.get(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}${"/obtenerEmpleado"}${id}`,  httpOptions);
+  }
+
+  GetListEmpleados(): Observable<any>{
+  return this.http.get(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`);
   }
 }

@@ -49,7 +49,7 @@
             </fieldset>
             <div class="card-footer text-muted text-right">
               <button type="submit" [disabled]="!empleadofrm.valid"  class="btn btn-primary card-link">Guardar</button>
-              <button type="reset" class="btn btn-primary card-link">Cancelar</button>
+              <button type="button" (click)="getListaEmpleados()" class="btn btn-primary card-link">Cancelar</button>
             </div>
           </form>
         </div>
