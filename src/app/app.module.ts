@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { MovimientoEmpleadosComponent } from './movimiento-empleados/movimiento-empleados.component';
 import { NominaComponent } from './nomina/nomina.component';
+import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NominaComponent } from './nomina/nomina.component';
     BrowserAnimationsModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule
 
   ],
   providers: [],
