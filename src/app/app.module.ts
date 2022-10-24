@@ -11,13 +11,17 @@ import { EmpleadosComponent } from './empleados/empleados.component';
 import { MovimientoEmpleadosComponent } from './movimiento-empleados/movimiento-empleados.component';
 import { NominaComponent } from './nomina/nomina.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { MaterialDesingModule } from './material-desing/material-desing.module';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     EmpleadosComponent,
     MovimientoEmpleadosComponent,
-    NominaComponent
+    NominaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSliderModule
+    MatSliderModule,
+    MaterialDesingModule
 
   ],
   providers: [],
