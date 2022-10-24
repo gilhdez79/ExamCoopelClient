@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, toArray } from 'rxjs/operators';
 import { Empleados,IEmpleado } from '../models/IEmpleados';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { apiSettings } from '../core/ApiSettings';
 import { EMPTY_OBSERVER } from 'rxjs/internal/Subscriber';
 import { IResponse, Response, ObjReturn } from '../models/IResponse';
+import { Action } from 'rxjs/internal/scheduler/Action';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -48,4 +50,24 @@ export class DataService {
   return this.http.get<IResponse>(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`)
   .pipe(map ((resp: IResponse) => resp.objReturn));
   }
+
+  GetListEmpleados2(): Observable<any>{
+
+    let Datos : Empleados[];
+  return   this.http.get<ObjReturn>(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`)
+    .pipe(
+      map(
+        (response) => ( {
+            id: response.id,
+            Nombre: response.nombre,
+            NumeroEmpleado : response.numeroEmpleado,
+
+        })
+
+
+      )
+    );
+
+  }
+
 }

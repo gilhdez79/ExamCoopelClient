@@ -20,6 +20,7 @@ export class EmpleadosComponent implements OnInit {
     IdRol:0
 
   }
+  datoEmp: Empleados[] = [];
   constructor(private fb: FormBuilder, private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -53,11 +54,16 @@ export class EmpleadosComponent implements OnInit {
   }
 
   getListaEmpleados(){
-    this.dataService.GetListEmpleados().subscribe(
+    this.dataService.GetListEmpleados2().subscribe(
       // result => console.log('success', result["objReturn"]),
       // error=> console.log('error: ', error)
       {
-        next: data => console.log(data),
+        next: data => {
+           let datos: Array<Empleados> = JSON.parse(JSON.stringify(data)) ;
+          this.datoEmp = datos;
+          console.log(this.datoEmp);
+
+        },
         error: err=> console.log(err)
       }
     )
