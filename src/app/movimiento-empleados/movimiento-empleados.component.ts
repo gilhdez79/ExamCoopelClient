@@ -8,6 +8,7 @@ import { MatSlider } from '@angular/material/slider';
 })
 export class MovimientoEmpleadosComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
