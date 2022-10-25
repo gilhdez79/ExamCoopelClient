@@ -53,7 +53,7 @@ export class DataService {
 
   GetListEmpleados2(): Observable<any>{
 
-    let Datos : Empleados[];
+  let Datos : Empleados[];
   return   this.http.get<ObjReturn>(`${apiSettings.URLAPI}${apiSettings.CTRLEMPLEADO}`)
     .pipe(
       map(
@@ -63,9 +63,16 @@ export class DataService {
             NumeroEmpleado : response.numeroEmpleado,
 
         })
-
-
       )
+    );
+  }
+
+  GetListNomina(numMes: number): Observable<any>{
+
+    let Datos : Empleados[];
+     return   this.http.get<ObjReturn>(`${apiSettings.URLAPI}${apiSettings.CTRLNOMINA}/obtenerNomina/${numMes}`)
+    .pipe(
+      map(resp =>resp )
     );
 
   }

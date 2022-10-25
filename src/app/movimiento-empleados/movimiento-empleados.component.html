@@ -1,50 +1,57 @@
 
 <div class="container">
   <mat-card>
-    <p>movimiento-empleados works!</p>
-    <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
+     <h2>Nomina Empleados </h2>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Leave a comment</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
-      </form>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100"  >
 
-      <p>
-        <mat-form-field appearance="legacy">
-          <mat-label>Legacy form field</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="fill">
-          <mat-label>Fill form field</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Outline form field</mat-label>
-          <input matInput placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-      </p>
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="idRol">
+        <th mat-header-cell *matHeaderCellDef> IdRol </th>
+        <td mat-cell *matCellDef="let element"> {{element.idRol}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="numEmpleado">
+        <th mat-header-cell *matHeaderCellDef> numEmpleado </th>
+        <td mat-cell *matCellDef="let element"> {{element.numEmpleado}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="cantidadEntrega">
+        <th mat-header-cell *matHeaderCellDef> cantidadEntrega </th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidadEntrega}} </td>
+      </ng-container>
+      <ng-container matColumnDef="salario">
+        <th mat-header-cell *matHeaderCellDef> salario </th>
+        <td mat-cell *matCellDef="let element"> {{element.salario}} </td>
+      </ng-container>
+      <ng-container matColumnDef="totalDias">
+        <th mat-header-cell *matHeaderCellDef> totalDias </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalDias}} </td>
+      </ng-container>
+      <ng-container matColumnDef="totalDespensa">
+        <th mat-header-cell *matHeaderCellDef> totalDespensa </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalDespensa}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isr">
+        <th mat-header-cell *matHeaderCellDef> isr </th>
+        <td mat-cell *matCellDef="let element"> {{element.isr}} </td>
+      </ng-container>
+      <ng-container matColumnDef="descuentoExedenteSalarial">
+        <th mat-header-cell *matHeaderCellDef> descuentoExedenteSalarial </th>
+        <td mat-cell *matCellDef="let element"> {{element.descuentoExedenteSalarial}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+
   </mat-card>
 </div>
