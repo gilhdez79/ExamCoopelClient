@@ -14,7 +14,7 @@ export class MovimientoEmpleadosComponent implements OnInit {
   dt:ClsNomina[]=[];
 
   dataSource: MatTableDataSource<ClsNomina> = new MatTableDataSource(this.dt);
-  displayedColumns: string[] = ['nombre', 'idRol', 'numEmpleado', 'cantidadEntrega', 'salario', 'totalDias', 'totalDespensa', 'isr', 'descuentoExedenteSalarial'];
+  displayedColumns: string[] = ['nombre', 'idRol', 'numEmpleado', 'cantidadEntrega', 'salario', 'totalDias', 'totalDespensa', 'isr', 'descuentoExedenteSalarial', 'details', 'update', 'delete'];
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
@@ -34,6 +34,16 @@ export class MovimientoEmpleadosComponent implements OnInit {
         error: err=> console.log(err)
       }
     )
+
+  }
+
+  public redirectToDetails = (id: string) => {
+
+  }
+  public redirectToUpdate = (id: string) => {
+
+  }
+  public redirectToDelete = (id: string) => {
 
   }
 
