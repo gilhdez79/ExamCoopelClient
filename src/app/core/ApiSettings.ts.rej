@@ -1,0 +1,10 @@
+diff a/src/app/core/ApiSettings.ts b/src/app/core/ApiSettings.ts	(rejected hunks)
+@@ -1,6 +1,6 @@
+ export  const  apiSettings={
+ "URLAPI":   'https://localhost:44300/api/',
+ "CTRLEMPLEADO": 'empleado',
+-"CTRLNOMINA": 'empleado',
+-
++"CTRLNOMINA": 'empleado'
++ 
+ }
