@@ -14,7 +14,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class DataService {
 
-  urlAPI:string = 'https://localhost:44300/';
+  urlAPI:string = 'http://localhost:8003/';
   constructor(  private http:HttpClient) {
   }
 
@@ -77,23 +77,5 @@ export class DataService {
 
   }
 
-  GetListNomina(numMes: number): Observable<any>{
-
-    let Datos : Empleados[];
-     return   this.http.get<ObjReturn>(`${apiSettings.URLAPI}${apiSettings.CTRLNOMINA}/${numMes}`)
-    .pipe(
-      map(
-        (response) => ( {
-            id: response.id,
-            Nombre: response.nombre,
-            NumeroEmpleado : response.numeroEmpleado,
-
-        })
-
-
-      )
-    );
-
-  }
 
 }
