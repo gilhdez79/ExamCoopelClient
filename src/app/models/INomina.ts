@@ -10,7 +10,7 @@ export interface INomina {
   DescuentoExedenteSalarial: number;
 }
 
-export class ClsNomina {
+export class ClsNomina  {
   Nombre: string='';
   IdRol: number = 0;
   NumEmpleado: string='';
