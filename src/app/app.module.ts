@@ -13,6 +13,7 @@ import { NominaComponent } from './nomina/nomina.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialDesingModule } from './material-desing/material-desing.module';
 import { FooterComponent } from './footer/footer.component';
+import { MediaItemsComponent } from './components/media-items/media-items.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     EmpleadosComponent,
     MovimientoEmpleadosComponent,
     NominaComponent,
-    FooterComponent
+    FooterComponent,
+    MediaItemsComponent
   ],
   imports: [
     BrowserModule,
