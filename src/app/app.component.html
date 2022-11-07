@@ -1,4 +1,7 @@
 
+<section>
+
+
 
 <app-header></app-header>
 
@@ -7,4 +10,7 @@
 </div>
 <router-outlet></router-outlet>
 
+<app-media-items (delete)="onMediaDelete($event)"  [mediaItem]="firstMediaItem"></app-media-items>
 <app-footer></app-footer>
+
+</section>
